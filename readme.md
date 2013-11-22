@@ -1,12 +1,11 @@
 # Vector
 Vector allow the developer to create and extend administration panels for end users in minutes.
 
-<strong>The last update has potential braking changes on json settings. Please test before deploy.</strong>
-
 ## Use now
 
 <pre>
-- clone the repo
+- clone the repo (not yet on meteorite)
+- create a settings.json as per the documentation
 - run mrt --settings settings.json
 - go to localhost/3000/admin
 - login with super@user.com / super
