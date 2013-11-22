@@ -26,8 +26,8 @@ Vector allow the developer to create and extend administration panels for end us
 
 ## Roadmap
 
-- 0.1 (current) preview mode; fully functional but untested
-- 0.2 better core and more modularity
+- 0.1 (completed) preview mode; fully functional but untested
+- 0.2 (current) better core and more modularity
 - 0.3 production ready
 
 ## License
