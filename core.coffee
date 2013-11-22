@@ -63,14 +63,14 @@ Vector = new _Vector
 if Meteor.isServer
 
   defaultPrivateSettings =
-    "vectorSettings":{
-      "sendVerificationEmail": false,
-      "forbidClientAccountCreation": true
-    }
+    "sendVerificationEmail": false,
+    "forbidClientAccountCreation": true
+    "defaultAdminRole": "administrator"
 
   class _VectorServer extends _Vector
     constructor: ->
       super
+
       customPrivateSettings = if Meteor.settings and Meteor.settings.vectorSettings then Meteor.settings.vectorSettings else {}
       @privateSettings = _.extend defaultPrivateSettings, customPrivateSettings
 
