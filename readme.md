@@ -5,7 +5,7 @@ Vector allow the developer to create and extend administration panels for end us
 
 <pre>
 - clone the repo (not yet on meteorite)
-- create a settings.json as per the documentation
+- create a settings.json as per the documentation or the example directory
 - run mrt --settings settings.json
 - go to localhost/3000/admin
 - login with super@user.com / super
