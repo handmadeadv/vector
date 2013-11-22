@@ -1,0 +1,21 @@
+<template name="list">
+  <h1>{{field.label}}</h1>
+  <ul class="list-unstyled vectorList">
+  {{#each data}}
+    <li{{#if activeDocumentIs _id}} class="active"{{/if}}>
+        <a href="{{settings.adminRoot}}/{{../collectionName}}/{{_id}}">{{title}}</a>
+    </li>
+  {{/each}}
+  </ul>
+</template>
+
+<template name="accountList">
+  <h1>{{field.label}}</h1>
+  <ul class="list-unstyled vectorList">
+  {{#each data}}
+    <li>
+        <a href="{{settings.adminRoot}}/{{../collectionName}}/{{_id}}">{{emails.[0].address}}</a>
+    </li>
+  {{/each}}
+  </ul>
+</template>

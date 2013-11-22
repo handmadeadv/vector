@@ -1,0 +1,91 @@
+<template name="vectorFormPasswordChange">
+  <div class="row">
+    <form class="col-md-4 col-md-offset-4">
+      <div class="vectorFormBody">
+        <label>Old password</label>
+        <input class="form-control" type="password" id="vectorFormPasswordChange_old"> 
+        <label>New password</label>
+        <input class="form-control" type="password" id="vectorFormPasswordChange_new">
+      </div>
+      <div class="vectorFormActions text-right">
+        <button class="btn btn-warning vectorFormCancel">Cancel</button>
+        <button class="btn btn-primary" type="submit">Confirm</button>
+      </div>
+    </form>
+  </div>
+</template>
+
+<template name="vectorFormAccountCreate">
+  <div class="row">
+    <form class="col-md-4 col-md-offset-4">
+      <div class="vectorFormBody">
+        <label>Email</label>
+        <input class="form-control" type="text" id="vectorFormAccountCreate_email"> 
+        <label>Password</label>
+        <input class="form-control" type="password" id="vectorFormAccountCreate_password">
+        <label>Role</label>
+        {{#if field.options}}
+          <select class="form-control" id="vectorFormAccountCreate_role">
+            {{#each field.options}}
+              <option>{{this}}</option>
+            {{/each}}            
+          </select>
+        {{/if}}
+      </div>
+      <div class="vectorFormActions text-right">
+        <button class="btn btn-warning vectorFormCancel">Cancel</button>
+        <button class="btn btn-primary" type="submit">Confirm</button>
+      </div>
+    </form>
+  </div>
+</template>
+
+<template name="vectorFormChildren">
+  <div class="row">
+    <form class="col-md-4 col-md-offset-4">
+      <div class="vectorFormBody">
+        <label>Test relations</label>
+        <select class="form-control" multiple>
+          {{#each related}}
+            <option data-id="{{_id}}">
+            {{#if title}}
+              {{title}}
+            {{else}}
+              {{emails.[0].address}}
+            {{/if}}
+            </option>
+          {{/each}}
+        </select>
+      </div>
+      <div class="vectorFormActions text-right">
+        <button class="btn btn-warning vectorFormCancel">Cancel</button>
+        <button class="btn btn-primary" type="submit">Confirm</button>
+      </div>
+    </form>
+  </div>
+</template>
+
+<template name="vectorFormParents">
+  <div class="row">
+    <form class="col-md-4 col-md-offset-4">
+      <div class="vectorFormBody">
+        <label>Test relations</label>
+        <select class="form-control" multiple>
+          {{#each related}}
+            <option data-id="{{_id}}">
+            {{#if title}}
+              {{title}}
+            {{else}}
+              {{emails.[0].address}}
+            {{/if}}              
+            </option>
+          {{/each}}
+        </select>
+      </div>
+      <div class="vectorFormActions text-right">
+        <button class="btn btn-warning vectorFormCancel">Cancel</button>
+        <button class="btn btn-primary" type="submit">Confirm</button>
+      </div>
+    </form>
+  </div>
+</template>

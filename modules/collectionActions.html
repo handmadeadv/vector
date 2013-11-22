@@ -1,0 +1,13 @@
+<template name="create">
+  <button class="btn btn-primary">{{field.label}}</button>  
+</template>
+
+<template name="accountCreate">
+  <button class="btn btn-primary">{{field.label}}</button>  
+</template>
+
+<template name="pagination">
+  {{#each navigation}}
+    <button class="btn btn-default{{#if active}} active{{/if}}">{{index}}</button>
+  {{/each}}
+</template>

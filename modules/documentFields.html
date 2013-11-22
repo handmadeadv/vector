@@ -1,0 +1,48 @@
+<template name="text">
+  <label>{{field.label}}</label>
+  <input class="form-control" type="text" value="{{plainValue}}" id="collectionField_{{field.key}}">
+</template>
+
+<template name="textarea">
+  <label>{{field.label}}</label>
+  <textarea class="form-control" id="collectionField_{{field.key}}">{{plainValue}}</textarea>
+</template>
+
+<template name="accountEmails">
+  <label>{{field.label}}</label>
+  <p>{{plainValue.[0].address}}</p>
+</template>
+
+<template name="accountPassword">
+  <ul class="fieldActionsWrap text-right list-unstyled">
+    <li>
+      <button class="btn btn-xs btn-warning galleryFakeInput accountPassword_change">Change password</button>
+    </li>
+  </ul>
+  <label>{{field.label}}</label>
+  <p>***********</p>
+</template>
+
+<template name="children">
+  <ul class="fieldActionsWrap text-right list-unstyled">
+    <li>
+      <a href="{{settings.adminRoot}}/{{collectionName}}/{{data._id}}/{{field.key}}" class="btn btn-xs btn-default childrenView">View</a>
+      <button class="btn btn-xs btn-primary childrenAdd">Add</button>
+      <button class="btn btn-xs btn-warning childrenRemove">Remove</button>
+    </li>
+  </ul>
+  <label>{{field.label}}: {{childrenData}}</label>
+</template>
+
+<template name="parents">
+  <ul class="fieldActionsWrap text-right list-unstyled">
+    <li>
+      <a href="{{settings.adminRoot}}/{{collectionName}}/{{data._id}}/{{field.key}}" class="btn btn-xs btn-default parentsView">View</a>
+      <button class="btn btn-xs btn-primary parentsAdd">Add</button>
+      <button class="btn btn-xs btn-warning parentsRemove">Remove</button>
+    </li>
+  </ul>
+  <label>{{field.label}}: {{parentsData}}</label>
+</template>
+
+

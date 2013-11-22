@@ -1,0 +1,87 @@
+<template name="vectorLayout">
+  <style type="text/css">
+    body,html{
+      height: 100%;
+    }
+  </style>
+  {{yield}}
+</template>
+
+<template name="vectorEdit">
+<div id="vectorBackground"></div>
+<div class="container-fluid" id="vector">
+  {{> notifications}}
+  {{> currentForm}}
+  {{> vectorNav}}
+  <div class="row" id="vectorEdit">
+
+    {{#if pageFields}}
+      <div id="vectorPage" class="col-md-12">
+        <div class="fieldsWrap">
+          {{#each pageFields}}
+            <div class="collectionField">{{renderField this ../collection ../collectionName}}</div>
+          {{/each}}
+        </div>
+      </div>
+    {{/if}}
+
+    {{#if collectionFields}}
+      <div id="vectorCollection" class="col-md-6">
+        <div class="actionsWrap">
+          {{#each collectionActions}}
+            <div class="collectionAction">{{renderField this ../collection ../collectionName}}</div>
+          {{/each}}
+        </div>
+        <div class="fieldsWrap">
+          {{#each collectionFields}}
+            <div class="collectionField">{{renderField this ../collection ../collectionName}}</div>
+          {{/each}}
+        </div>
+      </div>
+    {{/if}}
+
+    {{#if documentFields}}
+      <div id="vectorDocument" class="col-md-6">
+        {{#if document}}
+          <div class="actionsWrap">
+            {{#each documentActions}}
+              <div class="collectionAction">{{renderField this ../document ../collectionName}}</div>
+            {{/each}}
+          </div>
+          <div class="fieldsWrap">
+            <h1>Edit document</h1>
+            {{#each documentFields}}
+              <div class="documentField">{{renderField this ../document ../collectionName}}</div>
+            {{/each}}
+          </div>
+        {{else}}
+          <div class="fieldsWrap">
+            <h1>No document selected</h1>
+          </div>
+        {{/if}}
+      </div>
+    {{/if}}
+  </div>
+</div>
+</template>
+
+<template name="vectorNav">
+  <ul id="vectorNavMain" class="list-unstyled">
+    {{#each collectionList}}
+      <li{{#if activeCollectionIs name}} class="active"{{/if}}><a href="{{url}}">{{label}}</a></li>
+    {{/each}}
+  </ul>
+  <ul id="vectorNavSide" class="list-unstyled">
+    {{#if currentUser}}
+      <li id="vectorNavSide_logout"><p>Logout</p></li>
+    {{/if}}
+  </ul>
+</template>
+
+<template name="currentForm">
+  {{#if form}}
+    <div id="vectorForms">
+      {{form}}
+    </div>
+  {{/if}}
+</template>

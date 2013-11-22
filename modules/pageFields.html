@@ -1,0 +1,20 @@
+<template name="welcome">
+  {{#if loggingIn}}
+    <h1>{{{field.label}}}<br>{{{field.options.loggingIn}}}</h1>
+  {{else}}
+    {{#if currentUser}}
+      <h1>{{{field.label}}}<br>{{{field.options.logged}}}</h1>
+    {{else}}
+      <h1>{{{field.label}}}<br>{{{field.options.unlogged}}}</h1>
+      <div class="row">
+        <form class="col-md-4">
+          <label>Email</label>
+          <input class="form-control" type="text" id="vectorLoginEmail">
+          <label>Password</label>
+          <input class="form-control" type="text" id="vectorLoginPassword">
+          <button class="btn btn-success vectorSubmit">Submit</button>
+        </form>
+      </div>
+    {{/if}}
+  {{/if}}
+</template>
