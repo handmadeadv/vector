@@ -45,7 +45,6 @@ for i,collection of Vector.resources
       if userId and Vector.checkPermissions(user._id,'accounts')
         collections.push Meteor.users.find({},fields)
       else if userId
-        console.log 'userId'
         collections.push Meteor.users.find({_id:this.userId},fields)
 
       for ii,collectionName of Vector.resources['accounts'].children
