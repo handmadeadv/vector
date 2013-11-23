@@ -1,29 +1,32 @@
-Vector.notifications = 
-  timeout: null
+class Notifications
+  @timeout = null
+
   send: (message,type) ->
     _type = type or 'alert'
-    if Notifications.timeout then Meteor.clearTimeout Notifications.timeout
+    if @timeout then Meteor.clearTimeout @timeout
     Session.set 'notifications', {type:type,message:message,status:"inactive"}
-    Notifications.timeout = Meteor.setTimeout (->
+    @timeout = Meteor.setTimeout (=>
       Session.set 'notifications', {type:type,message:message,status:"active"}    
     ), 1
-    Notifications.timeout = Meteor.setTimeout (->
-      Notifications.reset()   
+    @timeout = Meteor.setTimeout (=>
+      @reset()   
     ), 1300
   hold: (message,type) ->
     _type = type or 'alert'
-    if Notifications.timeout then Meteor.clearTimeout Notifications.timeout
+    if @timeout then Meteor.clearTimeout @timeout
     Session.set 'notifications', {type:type,message:message,status:"inactive"}
-    Notifications.timeout = Meteor.setTimeout (->
+    @timeout = Meteor.setTimeout (=>
       Session.set 'notifications', {type:type,message:message,status:"active"}    
     ), 1
   reset: ->
     notifications = Session.get 'notifications'
-    if Notifications.timeout then Meteor.clearTimeout Notifications.timeout
+    if @timeout then Meteor.clearTimeout @timeout
     if notifications then notifications.status = 'inactive'
     Session.set 'notifications', notifications
-    Notifications.timeout = Meteor.setTimeout ( ->
+    Notifications.timeout = Meteor.setTimeout ( =>
       Session.set 'notifications',null ), 300
+
+Vector.notifications = new Notifications()
 
 Template.notifications.helpers
   notifications: ->
