@@ -24,24 +24,20 @@
 </template>
 
 <template name="children">
-  <ul class="fieldActionsWrap text-right list-unstyled">
-    <li>
+  <div class="fieldActionsWrap text-right list-unstyled btn-group">
       <a href="{{settings.adminRoot}}/{{collectionName}}/{{data._id}}/{{field.key}}" class="btn btn-xs btn-default childrenView">View</a>
-      <button class="btn btn-xs btn-primary childrenAdd">Add</button>
-      <button class="btn btn-xs btn-warning childrenRemove">Remove</button>
-    </li>
-  </ul>
+      <button class="btn btn-xs btn-default childrenAdd">Add</button>
+      <button class="btn btn-xs btn-default childrenRemove">Remove</button>
+  </div>
   <label>{{field.label}}: {{childrenData}}</label>
 </template>
 
 <template name="parents">
-  <ul class="fieldActionsWrap text-right list-unstyled">
-    <li>
-      <a href="{{settings.adminRoot}}/{{collectionName}}/{{data._id}}/{{field.key}}" class="btn btn-xs btn-default parentsView">View</a>
-      <button class="btn btn-xs btn-primary parentsAdd">Add</button>
-      <button class="btn btn-xs btn-warning parentsRemove">Remove</button>
-    </li>
-  </ul>
+  <div class="fieldActionsWrap text-right list-unstyled btn-group">
+     <a href="{{settings.adminRoot}}/{{collectionName}}/{{data._id}}/{{field.key}}" class="btn btn-xs btn-default parentsView">View</a>
+    <button class="btn btn-xs btn-default parentsAdd">Add</button>
+    <button class="btn btn-xs btn-default parentsRemove">Remove</button>
+  </div>
   <label>{{field.label}}: {{parentsData}}</label>
 </template>
 
