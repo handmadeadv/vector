@@ -6,12 +6,12 @@ Template.vectorFormPasswordChange.events
     if oldPassword and newPassword
       Accounts.changePassword oldPassword, newPassword, (error,result) ->
         if error
-          Notifications.send 'Wrong password'
+          Vector.notifications.send 'Wrong password'
         else
-          Notifications.send 'success'
+          Vector.notifications.send 'success'
           Session.set 'forms', null
     else
-      Notifications.send 'Please fill all the fields'
+      Vector.notifications.send 'Please fill all the fields'
 
 Template.vectorFormAccountCreate.events
   'submit form': (e,t) ->
