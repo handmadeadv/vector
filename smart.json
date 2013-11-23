@@ -1,7 +1,7 @@
 {
   "name": "vector",
   "description": "Reactive admin panel",
-  "homepage": "https://github.com/possibilities/meteor-cool-pkg",
+  "homepage": "http://vector.meteor.com",
   "author": "Davide Dal Colle",
   "version": "0.2.0",
   "git": "https://github.com/handmadeadv/vector.git",
