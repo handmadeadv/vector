@@ -4,12 +4,15 @@ Vector allow the developer to create and extend administration panels for end us
 ## Use now
 
 <pre>
-- clone the repo (not yet on meteorite)
-- create a settings.json as per the documentation or the example directory
-- run mrt --settings settings.json
-- go to localhost/3000/admin
-- login with super@user.com / super
-- enjoy
+mrt add bootstrap-3
+mrt add iron-router
+mrt add vector
+meteor remove autopublish
+meteor remove insecure
+meteor --settings settings.json (use the file inside /example)
+go to /admin
+user: super@user.com, password: super
+use iron-router layouts for your main content
 </pre>
 
 ## Full documentation
