@@ -177,3 +177,34 @@ html,body
         padding 15px 0 10px 30px
         display inline-block
         cursor pointer
+
+
+  #notificationsList
+    position absolute
+    right 5px
+    top 55px
+    width 300px
+    z-index 20
+    opacity .9
+
+    li
+      display block
+      padding 20px
+      background #222
+      color white
+      cursor pointer
+      -webkit-transition .3s
+      margin-bottom 5px
+      -webkit-transform perspective( 600px )
+
+      &.inactive
+        margin-bottom -45px
+        -webkit-transform rotateX(90deg)
+        -webkit-transform-origin center top -10px
+        opacity 0
+
+      &.warning
+        background #cc6666
+
+      &.success
+        background #66cc66
