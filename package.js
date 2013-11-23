@@ -8,7 +8,7 @@ Package.on_use(function (api, where){
 
   api.use(['coffeescript','underscore'], ['client','server']);
   api.use('accounts-password', 'server');
-  api.use(['templating','stylus','handlebars','iron-router'], 'client');
+  api.use(['templating','stylus','handlebars','iron-router','accounts-password','bootstrap-3'], 'client');
 
   api.export('Vector');
 
@@ -28,17 +28,19 @@ Package.on_use(function (api, where){
     'themes/basic.styl'], 'client');
 
   api.add_files([
+    'modules/global.html',
     'modules/forms.html',
     'modules/pageFields.html',
     'modules/collectionActions.html',
     'modules/collectionFields.html',
     'modules/documentActions.html',
     'modules/documentFields.html',
+    'modules/global.coffee',
     'modules/forms.coffee',
     'modules/pageFields.coffee',
     'modules/collectionFields.coffee',
     'modules/collectionActions.coffee',
     'modules/documentActions.coffee',
-    'modules/documentFields.coffee',], 'client');
+    'modules/documentFields.coffee'], 'client');
 
 });

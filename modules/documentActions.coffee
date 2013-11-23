@@ -11,7 +11,7 @@ Template.delete.events
       #       Meteor.call 'remove', image.public_id
       Vector.collections[@collectionName].remove {_id:id}
     else
-      Notifications.send @field.options or Vector.settings.defaultDeleteWarning
+      Vector.notifications.send @field.options or Vector.settings.defaultDeleteWarning
       $(t.find("button")).addClass 'active'
 
 Template.duplicate.events

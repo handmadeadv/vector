@@ -45,7 +45,6 @@ class _Vector
     @collections = {}
     @subscriptionId = null
   
-
   checkPermissions: (userId,collectionName,writePermission) ->
     if typeof userId is 'string'
       user = Meteor.users.findOne({_id:userId})
@@ -59,6 +58,7 @@ class _Vector
       collectionRoles.indexOf(userRole) >= 0
 
 Vector = new _Vector
+
 
 if Meteor.isServer
 

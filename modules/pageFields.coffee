@@ -5,6 +5,6 @@ Template.welcome.events
     password = t.find('#vectorLoginPassword').value
     Meteor.loginWithPassword email, password, (error) ->
       if error
-        Notifications.send Vector.settings.defaultLoginErrorWarning
+        Vector.notifications.send Vector.settings.defaultLoginErrorWarning
       else 
-        Notifications.send Vector.settings.defaultLoginSuccess
+        Vector.notifications.send Vector.settings.defaultLoginSuccess

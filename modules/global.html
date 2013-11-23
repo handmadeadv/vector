@@ -1,0 +1,9 @@
+<template name="notifications">
+  <ul class="list-unstyled" id="notificationsList">
+    {{#if notifications}}
+      <li id="notificationItem" class="{{notifications.status}} {{notifications.type}}">
+        {{notifications.message}}
+      </li>
+      {{/if}}
+  </ul>
+</template>
