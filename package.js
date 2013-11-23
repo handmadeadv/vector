@@ -39,6 +39,6 @@ Package.on_use(function (api, where){
     'modules/collectionFields.coffee',
     'modules/collectionActions.coffee',
     'modules/documentActions.coffee',
-    'modules/documentFields.coffee',], 'client');
+    'modules/documentFields.coffee'], 'client');
 
 });
