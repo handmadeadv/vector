@@ -12,7 +12,7 @@ meteor remove insecure
 meteor --settings settings.json (use the file inside /example)
 go to /admin
 user: super@user.com, password: super
-use iron-router layouts for your main content
+--> delete content from the body and use iron-router layouts for your main content
 </pre>
 
 ## Full documentation
