@@ -2,6 +2,7 @@
 _publish = (i) ->
   Vector.collections[i] = new Meteor.Collection i
   Meteor.publish "vector_#{i}", (docId) ->
+    check(docId, Match.Optional(String))
     collections = []
     userId = this.userId
 
@@ -36,7 +37,8 @@ for i,collection of Vector.resources
 
   else
     Vector.collections['accounts'] = Meteor.users
-    Meteor.publish 'vector_accounts', ->
+    Meteor.publish 'vector_accounts', (docId)->
+      check(docId, Match.Optional(String))
       fields = {username:1,profile:1,emails:1}
       userId = this.userId
       user = Meteor.users.findOne({_id:userId})
