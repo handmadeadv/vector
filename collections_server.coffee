@@ -80,7 +80,7 @@ Accounts.config
   forbidClientAccountCreation: Vector.privateSettings.forbidClientAccountCreation
 
 _users = Meteor.users.find({"profile.role":Vector.privateSettings.defaultAdminRole}).count()
-if _users is 0
+if _users is 0 and Vector.privateSettings.createDefaultUser is true
   Accounts.createUser
     email: "super@user.com"
     password: "super"

@@ -66,6 +66,7 @@ if Meteor.isServer
     "sendVerificationEmail": false,
     "forbidClientAccountCreation": true
     "defaultAdminRole": "administrator"
+    "createDefaultUser": true
 
   class _VectorServer extends _Vector
     constructor: ->
