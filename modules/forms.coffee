@@ -22,7 +22,7 @@ Template.vectorFormAccountCreate.events
     profile = {role:role}
     if email and password
       Meteor.call 'vectorCreateUser', email,password,profile
-      Session.set 'forms'. null
+      Session.set 'forms', null
 
 Template.vectorFormChildren.events
   'submit form': (e,t) ->
