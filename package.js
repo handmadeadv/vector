@@ -8,7 +8,7 @@ Package.on_use(function (api, where){
 
   api.use(['coffeescript','underscore'], ['client','server']);
   api.use('accounts-password', 'server');
-  api.use(['templating','stylus','handlebars','iron-router','accounts-password','bootstrap-3'], 'client');
+  api.use(['templating','stylus','handlebars','iron-router','accounts-password'], 'client');
 
   api.export('Vector');
 
