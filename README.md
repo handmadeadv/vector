@@ -4,7 +4,6 @@ Vector allow the developer to create and extend administration panels for end us
 ## Use now
 
 <pre>
-mrt add bootstrap-3
 mrt add iron-router
 mrt add vector
 meteor remove autopublish
