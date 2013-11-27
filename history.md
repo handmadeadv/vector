@@ -1,5 +1,8 @@
 # History
 
+0.2.2 27.11.2013
+- typos fix
+
 0.2.1 26.11.2013
 - removed boostrap dependency
 
