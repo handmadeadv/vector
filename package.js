@@ -14,7 +14,7 @@ Package.on_use(function (api, where){
 
 
   api.add_files([
-    'core.coffee',], ['client','server']);
+    'core.coffee'], ['client','server']);
 
   api.add_files([
     'collections_server.coffee',
