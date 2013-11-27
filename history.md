@@ -2,6 +2,8 @@
 
 0.2.2 27.11.2013
 - typos fix
+- check() for publish
+- option to prevent the creation of a default user
 
 0.2.1 26.11.2013
 - removed boostrap dependency
