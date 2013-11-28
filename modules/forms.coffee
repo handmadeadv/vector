@@ -21,8 +21,9 @@ Template.vectorFormAccountCreate.events
     role = t.find("#vectorFormAccountCreate_role").value
     profile = {role:role}
     if email and password
-      Meteor.call 'vectorCreateUser', email,password,profile
-      Session.set 'forms', null
+      Meteor.call 'vectorCreateUser', email,password,profile, (e,r)->
+        Session.set 'forms', null
+        Router.go('vectorEdit',{collectionName:'accounts',_id:r})
 
 Template.vectorFormChildren.events
   'submit form': (e,t) ->
