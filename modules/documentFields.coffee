@@ -30,7 +30,7 @@ Template.children.events
   'click .childrenAdd': ->
     documents = []
     data = @
-    Meteor.call 'getUnrelated', @field.key, data.collectionName, data.data._id, {title:1,_id:1,emails:1}, 'children', (e,r) ->
+    Meteor.call 'getUnrelated', @field.key, data.collectionName, [data.data._id], {title:1,_id:1,emails:1}, 'children', (e,r) ->
       if r
         documents = r
         context =
@@ -76,7 +76,7 @@ Template.parents.events
     documents = []
     data = @
     ids = data.data["#{@field.key}_id"] or []
-    Meteor.call 'getUnrelated', data.collectionName, @field.key, ids, {title:1,_id:1,emails:1}, 'parents', (e,r) ->
+    Meteor.call 'getUnrelated', data.collectionName, @field.key, [ids], {title:1,_id:1,emails:1}, 'parents', (e,r) ->
       if r
         documents = r
         context =
