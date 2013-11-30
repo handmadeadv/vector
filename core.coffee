@@ -63,8 +63,6 @@ Vector = new _Vector
 if Meteor.isServer
 
   defaultPrivateSettings =
-    "sendVerificationEmail": false,
-    "forbidClientAccountCreation": true
     "defaultAdminRole": "administrator"
     "createDefaultUser": true
 

@@ -75,9 +75,13 @@ for i,collection of Vector.resources
         if Vector.checkPermissions(userId,'user') then true
         else if userId then doc._id is userId
 
-Accounts.config
-  sendVerificationEmail: Vector.privateSettings.sendVerificationEmail
-  forbidClientAccountCreation: Vector.privateSettings.forbidClientAccountCreation
+
+if Vector.privateSettings.sendVerificationEmail
+  Accounts.config
+    sendVerificationEmail: Vector.privateSettings.sendVerificationEmail
+if Vector.privateSettings.forbidClientAccountCreation
+  Account.config
+    forbidClientAccountCreation: Vector.privateSettings.forbidClientAccountCreation
 
 _users = Meteor.users.find({"profile.role":Vector.privateSettings.defaultAdminRole}).count()
 if _users is 0 and Vector.privateSettings.createDefaultUser is true
