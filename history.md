@@ -1,5 +1,9 @@
 # History
 
+0.2.3 1.12.2013
+- check() for methods
+- new module: titleWithPermalink for easy permalinks
+
 0.2.2 27.11.2013
 - typos fix
 - check() for publish

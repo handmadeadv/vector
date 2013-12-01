@@ -22,7 +22,7 @@ user: super@user.com, password: super
 - Auto generated admin panel just using settings.json
 - Roles and accounts management
 - Easy relationships beween collections
-- Largely customizable with components
+- Easy permalinks
 - Easy extendable; modules are plain Meteor templates
 - Separation between setup and content management; end users are limited to what the developer has set
 
