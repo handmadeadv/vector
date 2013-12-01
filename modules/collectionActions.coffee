@@ -6,6 +6,7 @@ Template.create.events
     query['created_at'] = Date.now()
     id = Vector.collections[collectionName].insert query
     Router.go('vectorEdit',{collectionName:collectionName,_id:id})
+    Session.set 'page', 1
 
 
 Template.accountCreate.events

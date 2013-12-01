@@ -4,11 +4,6 @@ Template.delete.events
     if button.hasClass('active')
       id = @data._id
       model = Vector.resources[@collectionName]
-      # for i,field of model.documentFields
-      #   if field.type is 'gallery'
-      #     gallery = @data[field.key]
-      #     for ii,image of gallery
-      #       Meteor.call 'remove', image.public_id
       Vector.collections[@collectionName].remove {_id:id}
     else
       Vector.notifications.send @field.options or Vector.settings.defaultDeleteWarning
@@ -26,3 +21,4 @@ Template.duplicate.events
     query['created_at'] = Date.now()
     id = Vector.collections[@collectionName].insert query
     Router.go('vectorEdit',{collectionName:collectionName,_id:id})
+    Session.set 'page', 1
