@@ -3,6 +3,20 @@
   <input class="form-control" type="text" value="{{plainValue}}" id="collectionField_{{field.key}}">
 </template>
 
+<template name="titleWithPermalink">
+  <div class="fieldActionsWrap text-right list-unstyled btn-groups">
+    <small><em>
+      {{#if data.permalink}}
+        /{{data.permalink}}
+      {{else}}
+        Edit to create permalink
+      {{/if}}
+    </em></small>
+  </div>
+  <label>{{field.label}}</label>
+  <input class="form-control" type="text" value="{{plainValue}}" id="collectionField_{{field.key}}">
+</template>
+
 <template name="textarea">
   <label>{{field.label}}</label>
   <textarea class="form-control" id="collectionField_{{field.key}}">{{plainValue}}</textarea>

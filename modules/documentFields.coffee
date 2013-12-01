@@ -6,6 +6,29 @@ Template.text.events
     query[@field.key] = e.target.value
     Vector.collections[@collectionName].update {_id:id},{$set:query}  
 
+Template.titleWithPermalink.events
+  'keyup': (e,t) ->
+    id = @data._id
+    collection = Vector.collections[@collectionName]
+    query = {}
+    _generatePermalink = (title) ->
+      link = title.replace(/[^a-z0-9]+/gi, '-').replace(/^-*|-*$/g, '').toLowerCase()
+      worklink = link
+      duplicateIndex = 1
+      check = ->
+        duplicate = collection.findOne({permalink:worklink,_id:{$ne: id}})
+        if duplicate
+          duplicateIndex++
+          worklink = "#{link}-#{duplicateIndex}"
+          check()
+        else
+          worklink
+      permalink = check()
+      permalink
+    query[@field.key] = e.target.value
+    query["permalink"] = _generatePermalink(e.target.value)
+    collection.update {_id:id},{$set:query}  
+
 Template.textarea.events
   'keyup': (e,t) ->
     id = @data._id
