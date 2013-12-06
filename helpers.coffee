@@ -24,7 +24,14 @@ Handlebars.registerHelper 'renderField', (field,data,collectionName) ->
 
 Handlebars.registerHelper 'plainValue', () ->
   if @field and @field.key and @data
-    @data[@field.key]
+    dataRecursive(@data, @field.key)
+
+# if key is a dotted string (profile.name) then this method will traverse the data object
+# to return data.profile.name
+dataRecursive = (data, key) ->
+  for keyElement in key.split('.')
+    data = data[keyElement] if data
+  data
 
 Handlebars.registerHelper 'activeDocumentIs', (_id) ->
   if Router.getData() and Router.getData().document
@@ -46,7 +53,7 @@ Handlebars.registerHelper 'collectionList', ->
         label: resource.label or ( i.charAt(0).toUpperCase() + i.slice(1) )
         url: "#{Vector.settings.adminRoot}/#{i}"
         name: i
-  list  
+  list
 
 Handlebars.registerHelper 'settings', ->
   Vector.settings
@@ -66,7 +73,7 @@ Template.currentForm.helpers
     if data
       if data.type
         new Handlebars.SafeString(Template[data.type](data.context))
-      else  
+      else
         new Handlebars.SafeString(Template[data]())
 
 Template.currentForm.events
