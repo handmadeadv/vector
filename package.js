@@ -27,6 +27,8 @@ Package.on_use(function (api, where){
     'controllers.coffee',
     'themes/basic.styl'], 'client');
 
+  api.add_files('themes/bootstrap.css', 'client', {isAsset: true});
+
   api.add_files([
     'modules/global.html',
     'modules/forms.html',
