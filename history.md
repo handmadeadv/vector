@@ -1,5 +1,11 @@
 # History
 
+0.2.4 12.12.2013
+- contributions from the community
+- more comments for the source code
+- bootstrap served as static asset
+- active document style for accounts list
+
 0.2.3 1.12.2013
 - check() for methods
 - new module: titleWithPermalink for easy permalinks
