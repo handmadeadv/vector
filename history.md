@@ -1,5 +1,8 @@
 # History
 
+0.2.5 12.12.2013
+- fixed package download bug
+
 0.2.4 12.12.2013
 - contributions from the community
 - more comments for the source code
