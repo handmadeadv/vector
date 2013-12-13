@@ -1,4 +1,5 @@
 
+# main admin navigation
 Handlebars.registerHelper 'navigation', ->
   page = Session.get 'page'
   count = Router.getData().collectionCount
@@ -12,6 +13,8 @@ Handlebars.registerHelper 'navigation', ->
         active: if i is page then true else false
   pages
 
+# render a single field for collections and documents
+# pass the correct context
 Handlebars.registerHelper 'renderField', (field,data,collectionName) ->
     context =
       data: data
@@ -22,6 +25,8 @@ Handlebars.registerHelper 'renderField', (field,data,collectionName) ->
     else
       "#{Vector.settings.defaultNoTemplateWarning}: #{field.type}"
 
+# the raw property data
+# unfiltered fields such as inputs or textareas use this
 Handlebars.registerHelper 'plainValue', () ->
   if @field and @field.key and @data
     dataRecursive(@data, @field.key)
@@ -33,18 +38,21 @@ dataRecursive = (data, key) ->
     data = data[keyElement] if data
   data
 
+# check if the document is active
 Handlebars.registerHelper 'activeDocumentIs', (_id) ->
   if Router.getData() and Router.getData().document
     Router.getData().document._id is _id
   else
     false
 
+# check if the collection is active
 Handlebars.registerHelper 'activeCollectionIs', (collectionName) ->
   if Router.getData() and Router.getData().collectionName
     Router.getData().collectionName is collectionName
   else
     false
 
+# list of collections
 Handlebars.registerHelper 'collectionList', ->
   list = []
   for i, resource of Vector.resources
@@ -55,6 +63,7 @@ Handlebars.registerHelper 'collectionList', ->
         name: i
   list
 
+# general settings
 Handlebars.registerHelper 'settings', ->
   Vector.settings
 

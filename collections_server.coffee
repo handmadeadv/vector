@@ -1,4 +1,7 @@
 
+# publish function
+# related documents are added automatically
+# relations are declared inside settings.json
 _publish = (i) ->
   Vector.collections[i] = new Meteor.Collection i
   Meteor.publish "vector_#{i}", (docId) ->
@@ -76,6 +79,7 @@ for i,collection of Vector.resources
         else if userId then doc._id is userId
 
 
+# account configuration
 if Vector.privateSettings.sendVerificationEmail
   Accounts.config
     sendVerificationEmail: Vector.privateSettings.sendVerificationEmail
@@ -83,6 +87,7 @@ if Vector.privateSettings.forbidClientAccountCreation
   Account.config
     forbidClientAccountCreation: Vector.privateSettings.forbidClientAccountCreation
 
+# creations of the first super user, is necessary
 _users = Meteor.users.find({"profile.role":Vector.privateSettings.defaultAdminRole}).count()
 if _users is 0 and Vector.privateSettings.createDefaultUser is true
   Accounts.createUser

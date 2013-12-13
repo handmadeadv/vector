@@ -1,3 +1,6 @@
+# create collections
+# store collections into Vector.collections
+
 for i,collection of Vector.resources
   if i isnt 'accounts'
     Vector.collections[i] = new Meteor.Collection i

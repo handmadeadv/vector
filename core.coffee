@@ -1,10 +1,12 @@
 
+# some default settings
+# to be extended with settings.json settings
+
 instructions = "
   Missing settings.json file.<br>
   Visit <a target='_blank' href='vector.meteor.com'>vector.meteor.com</a> for full documentation,
   or use example.json located inside the package root
 "
-
 
 defaultResources = 
   "dashboard": {
@@ -32,6 +34,7 @@ defaultSettings =
   "defaultLoginErrorWarning": "Login error",
   "defaultLoginSuccess": "Welcome",
   "documentsPerPage": 10
+
 
 class _Vector
 

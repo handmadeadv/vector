@@ -1,6 +1,5 @@
 adminRoot = Vector.settings.adminRoot
 
-
 Meteor.startup ->
   # init application state: current page
   Session.setDefault 'page', 1
