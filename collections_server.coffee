@@ -84,7 +84,7 @@ if Vector.privateSettings.sendVerificationEmail
   Accounts.config
     sendVerificationEmail: Vector.privateSettings.sendVerificationEmail
 if Vector.privateSettings.forbidClientAccountCreation
-  Account.config
+  Accounts.config
     forbidClientAccountCreation: Vector.privateSettings.forbidClientAccountCreation
 
 # creations of the first super user, is necessary
