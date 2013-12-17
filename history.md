@@ -1,5 +1,10 @@
 # History
 
+0.2.6 17.12.2013
+- experimental support for login with other services
+- login box has password field instead of text field
+- fixed accounts configuration
+
 0.2.5 12.12.2013
 - fixed package download bug
 
