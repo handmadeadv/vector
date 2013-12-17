@@ -15,6 +15,17 @@
           <button class="btn btn-success vectorSubmit">Submit</button>
         </form>
       </div>
+      {{#if services}}
+        <div class="row">
+          <div class="col-md-4">
+            <hr>
+            <label>Additional login options</label>
+            {{#each services}}
+              <button id="vectorLogin_{{name}}" class="btn btn-default vectorLoginService">Login with {{name}}</button>
+            {{/each}}
+          </div>
+        </div>
+      {{/if}}
     {{/if}}
   {{/if}}
 </template>
