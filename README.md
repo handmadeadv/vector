@@ -1,8 +1,8 @@
 # PROJECT DISCONTINUED
-## WE ANCOURAGE YOU TO FORK THE PROJECT AND DO AS YOU WISH
+## WE ENCOURAGE YOU TO FORK THE PROJECT AND DO AS YOU WISH
 
 # Vector
-Vector allow the developer to create and extend administration panels for end users in minutes.
+Vector allows the developer to create and extend administration panels for end users in minutes.
 
 ## Use now
 
